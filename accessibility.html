@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Accessibility statement - HackTrent at Trent University</title>
+    <meta name="description" content="Which accessibility standard the HackTrent website targets, what has been tested, known gaps, and how to report a problem.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="icon" href="data:,">
+    <link rel="preload" href="assets/fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="page-statement">
+    <header class="site-header">
+        <a class="skip-link" href="#main">Skip to main content</a>
+
+        <div class="brand">
+            <p class="brand-name"><a href="index.html">HackTrent</a></p>
+            <p class="brand-tagline">at Trent University</p>
+        </div>
+    </header>
+
+    <!-- Same navigation, in the same order, as the home page (WCAG 3.2.3) -->
+    <nav class="site-nav" aria-label="Main">
+        <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#apply">Apply Now</a></li>
+            <li><a href="index.html#schedule">Event Schedule</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main id="main" tabindex="-1">
+        <section>
+            <h1>Accessibility statement</h1>
+            <p>We want everyone to be able to use the HackTrent website. That includes people who use a keyboard,
+                a screen reader, screen magnification, voice control, or high contrast settings, and people who
+                are colour blind.</p>
+
+            <h2>Standard we aim for</h2>
+            <p>This site targets the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA. We have not
+                had it independently audited, so we do not claim it is fully compliant.</p>
+
+            <h2>What you can do on this site</h2>
+            <ul>
+                <li>Use every link, button and form field with a keyboard only, with a thick visible focus outline.</li>
+                <li>Skip straight to the main content with the first link on the page.</li>
+                <li>Zoom to 400% without content being cut off or scrolling sideways.</li>
+                <li>Use your system's dark mode, increased contrast, or Windows contrast theme.</li>
+                <li>Navigate by headings and landmarks with a screen reader.</li>
+                <li>Read the site in Atkinson Hyperlegible Next, a typeface designed for low-vision readers.</li>
+                <li>Get form errors that say what went wrong and how to fix it, shown with an icon and text, not colour alone.</li>
+                <li>Turn off scrolling animation with your system's reduced motion setting.</li>
+            </ul>
+
+            <h2>What we have tested</h2>
+            <p>These checks pass on both pages, in light and dark mode:</p>
+            <ul>
+                <li>axe-core and the IBM Equal Access Checker: no WCAG 2.2 A or AA violations found.</li>
+                <li>Lighthouse accessibility: 100.</li>
+                <li>HTML validation: no errors.</li>
+                <li>An automated suite covering keyboard order, focus visibility, form errors, status messages,
+                    320px reflow, 200% text, text spacing, reduced motion and forced colours.</li>
+                <li>Screenshots simulating deuteranopia, protanopia, tritanopia, full colour blindness and blurred
+                    vision, checked by eye.</li>
+            </ul>
+
+            <h2>Known gaps</h2>
+            <ul>
+                <li>The site has not yet been tested with a screen reader or a screen magnifier by a person, or by
+                    disabled users.</li>
+                <li>The Privacy Policy, Terms of Use and recap links are placeholders that do not go anywhere yet.</li>
+                <li>The search only searches this page.</li>
+            </ul>
+
+            <h2>Report a problem</h2>
+            <p>If something on this site does not work for you, tell an organizer at the check-in desk or use the
+                <a href="index.html#contact">Contact section</a>. We will fix it.</p>
+        </section>
+    </main>
+
+    <!-- Same footer, with Contact in the same place, as the home page (WCAG 3.2.6) -->
+    <footer class="site-footer">
+        <p>&copy; 2026 HackTrent. All rights reserved.</p>
+        <nav aria-label="Footer">
+            <ul>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#privacy">Privacy Policy</a></li>
+                <li><a href="index.html#terms">Terms of Use</a></li>
+                <li><a href="accessibility.html" aria-current="page">Accessibility</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>
