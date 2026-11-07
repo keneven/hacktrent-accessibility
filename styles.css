@@ -1,133 +1,838 @@
+/* =========================================================
+   HackTrent: accessible styles (WCAG 2.2 AA target)
+
+   Colour is set through semantic tokens. Each theme (light,
+   dark, more contrast) only swaps token values, so every rule
+   below works in every theme. Measured contrast ratios are
+   recorded next to each token. Re-check them if you change a
+   value: https://webaim.org/resources/contrastchecker/
+   ========================================================= */
+
+@font-face {
+    /* Atkinson Hyperlegible Next: designed by the Braille Institute for low-vision
+       readers. I/l/1 and O/0 are clearly different. Self-hosted, SIL OFL licence. */
+    font-family: "Atkinson Hyperlegible Next";
+    font-style: normal;
+    font-weight: 200 800;
+    font-display: swap;
+    src: url("assets/fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2") format("woff2");
+}
+
+:root {
+    color-scheme: light dark;
+
+    /* Brand colours: the same in every theme */
+    --violet-900: #2A0A4F;       /* nav + footer background; white text 16.74:1 */
+    --violet-700: #4C1D95;       /* header background; white text 10.95:1 */
+    --violet-100: #EDE4FF;       /* on violet-700 8.94:1, on violet-900 12.95:1 */
+    --aqua-300: #67E8F9;         /* search button; vs header 7.56:1, ink text 12.07:1 */
+    --aqua-200: #A5F3FC;         /* nav hover; ink text 14.02:1 */
+    --yellow: #FDE047;           /* focus ring on dark areas: 8.31:1 to 14.11:1 */
+    --ink: #1C1726;
+    --white: #FFFFFF;
+    --error-strong: #B42318;     /* white text on it 6.57:1 */
+
+    /* Light theme tokens (ratios against --bg unless noted) */
+    --bg: #FFFFFF;
+    --text: #1C1726;             /* 17.50:1 (AAA) */
+    --text-muted: #4B4458;       /* 9.26:1 */
+    --heading: #2A0A4F;          /* 16.74:1 */
+    --link: #5B21B6;             /* 8.98:1, always underlined */
+    --surface: #F5F0FF;          /* text on it 15.66:1 */
+    --border: #6B6478;           /* 5.65:1, needs 3:1 */
+    --input-bg: #FFFFFF;
+    --accent: #5B21B6;           /* checked radios/checkboxes 8.98:1 */
+    --error: #B42318;            /* 6.57:1; always with icon + "Error:" text */
+    --error-bg: #FEF3F2;         /* error text on it 6.05:1 */
+    --on-error: #FFFFFF;
+    --success: #14532D;
+    --success-bg: #DCFCE7;       /* success text on it 8.30:1 */
+    --btn-bg: #5B21B6;           /* white text 8.98:1 */
+    --btn-text: #FFFFFF;
+    --btn-border: #2A0A4F;
+    --btn-hover-bg: #2A0A4F;
+    --btn-hover-text: #FFFFFF;
+    --aside-bg: #ECFEFF;
+    --aside-text: #1C1726;       /* 16.82:1 */
+    --aside-link: #5B21B6;       /* 8.63:1 */
+    --aside-muted: #4B4458;
+    --search-bg: #FFFFFF;
+    --search-text: #1C1726;
+    --search-border: #1C1726;    /* vs header 10.95:1 */
+    --focus-default: #1C1726;    /* 17.50:1 on white, 16.82:1 on aqua panel */
+    --focus: var(--focus-default);
+}
+
+/* Dark theme: follows the system setting. No pure white on pure black. */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #15111C;
+        --text: #ECE7F5;         /* 15.34:1 (AAA) */
+        --text-muted: #C3BACF;   /* 9.96:1 */
+        --heading: #E2D5FF;      /* 13.46:1 */
+        --link: #C4B5FD;         /* 10.08:1, always underlined */
+        --surface: #241B33;      /* text on it 13.53:1, links 8.89:1 */
+        --border: #9C93AD;       /* 6.37:1 */
+        --input-bg: #1E1828;     /* text on it 14.23:1, border 5.91:1 */
+        --accent: #C4B5FD;       /* 10.08:1 */
+        --error: #FF9B92;        /* 9.17:1 */
+        --error-bg: #3A1716;     /* error text on it 7.88:1 */
+        --on-error: #15111C;     /* icon glyph 9.17:1 */
+        --success: #86EFAC;
+        --success-bg: #0F2A1B;   /* success text on it 10.94:1 */
+        --btn-bg: #C4B5FD;       /* dark text 10.08:1 */
+        --btn-text: #15111C;
+        --btn-border: #E2D5FF;
+        --btn-hover-bg: #E2D5FF; /* dark text 13.46:1 */
+        --btn-hover-text: #15111C;
+        --aside-bg: #0F2629;
+        --aside-text: #E0FBFC;   /* 14.57:1 */
+        --aside-link: #A5F3FC;   /* 12.65:1 */
+        --aside-muted: #B5D9DC;  /* 10.47:1 */
+        --search-bg: #1E1828;
+        --search-text: #ECE7F5;
+        --search-border: #ECE7F5;/* vs header 9.03:1 */
+        --focus-default: #FDE047;/* 14.11:1 on bg, 12.45:1 on surface, 11.98:1 on aside */
+    }
+}
+
+/* "Increase contrast" system setting: muted greys become full-strength text,
+   borders get darker and thicker */
+@media (prefers-contrast: more) {
+    :root {
+        --text-muted: var(--text);
+        --aside-muted: var(--aside-text);
+        --border: var(--text);
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* Text for screen readers only (e.g. the "Error:" prefix on messages) */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+html {
+    /* No fixed px size, so browser text settings and zoom work (WCAG 1.4.4) */
+    font-size: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Global reduced motion (WCAG 2.3.3): catches anything added later too */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
 body {
     margin: 0;
+    min-height: 100vh;
+    font-family: "Atkinson Hyperlegible Next", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 1.0625rem;          /* 17px at default settings, scales with user preference */
+    line-height: 1.5;
+    color: var(--text);
+    background: var(--bg);
+
+    /* Mobile first: one column, so nothing scrolls sideways at 320px (WCAG 1.4.10).
+       DOM order = visual order at every width. */
     display: grid;
-    grid-template-columns: 220px 1fr 220px;
-    grid-template-rows: auto 1fr auto;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "aside"
+        "footer";
 }
 
-/* Top header + search bar */
-section:first-child {
-    grid-column: 1 / 4;
-    grid-row: 1;
+input,
+button,
+select,
+textarea {
+    font: inherit;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---------- Links ---------- */
+a {
+    color: var(--link);
+    text-decoration: underline;          /* never colour alone (WCAG 1.4.1) */
+    text-underline-offset: 0.15em;
+    text-decoration-thickness: 0.08em;
+}
+
+a:hover {
+    text-decoration-thickness: 0.18em;
+}
+
+@media (prefers-contrast: more) {
+    a {
+        text-decoration-thickness: 0.15em;
+    }
+}
+
+/* ---------- Focus (WCAG 2.4.7, 2.4.11, 2.4.13) ---------- */
+:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 3px;
+}
+
+.site-header,
+.site-nav,
+.site-footer {
+    --focus: var(--yellow);
+}
+
+section[id],
+main {
+    scroll-margin-top: 1rem;
+}
+
+main:focus-visible {
+    outline-offset: -3px;
+}
+
+/* ---------- Skip link ---------- */
+.skip-link {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 100;
+    padding: 0.75rem 1.25rem;
+    background: var(--yellow);
+    color: var(--ink);                   /* 13.28:1 */
+    font-weight: 700;
+    border: 2px solid var(--ink);
+    border-radius: 0.25rem;
+    transform: translateY(-200%);
+}
+
+/* Appears instantly on focus, so it is never caught off screen */
+.skip-link:focus {
+    transform: translateY(0);
+    outline: 3px solid var(--ink);
+    outline-offset: 2px;
+}
+
+/* ---------- Header + search ---------- */
+.site-header {
+    grid-area: header;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
     justify-content: space-between;
-    padding: 15px 25px;
-    background-color: blueviolet;
+    gap: 1rem 2rem;
+    padding: 1rem 1.5rem;
+    background: var(--violet-700);
+    color: var(--white);
 }
 
-/* Welcome to HackTrent header */
-h2 {
-    font-size: 2em;
-    background-color: blueviolet;
-    color: purple;
+.brand-name {
+    font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.1;
 }
 
-/* Trent University tagline */
-h3 {
-    font-size: 2.1em;
-    background-color: blueviolet;
-    color: purple;
-    display: flex;
+.brand-name a {
+    color: var(--white);
+    text-decoration: none;
 }
 
-/* Navigation sidebar */
-section:nth-child(2) {
-    grid-column: 1;
-    grid-row: 2;
+.brand-name a:hover {
+    text-decoration: underline;
+}
+
+.brand-tagline {
+    font-size: 1.125rem;
+    color: var(--violet-100);
+}
+
+.search {
+    flex: 0 1 26rem;
+    min-width: 0;
+}
+
+.search form {
     display: flex;
     flex-direction: column;
-    gap: 3em;
-    background-color: purple;
-    color: blue;
-    padding: 1em;
+    gap: 0.375rem;
 }
 
-/* Search bar */
-div.search {
+.search label {
+    font-weight: 700;
+}
+
+.search-row {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search input {
+    flex: 1;
+    min-width: 0;
+    min-height: 2.75rem;                 /* 44px */
+    padding: 0.5rem 0.75rem;
+    background: var(--search-bg);
+    color: var(--search-text);
+    border: 2px solid var(--search-border);
+    border-radius: 0.25rem;
+}
+
+.search button[type="submit"] {
+    min-height: 2.75rem;
+    padding: 0.5rem 1rem;
+    background: var(--aqua-300);
+    color: var(--ink);
+    font-weight: 700;
+    border: 2px solid var(--ink);
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.search button[type="submit"]:hover {
+    background: var(--aqua-200);
+}
+
+.search .field-error {
+    color: var(--white);
+    background: var(--error-strong);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.search .field-error::before {
+    background: var(--white);
+    color: var(--error-strong);
+}
+
+.search-status {
+    font-weight: 700;
+}
+
+/* Results sit directly under the search box, so magnifier users see them */
+.search-results {
+    --focus: var(--focus-default);
+    margin-top: 0.25rem;
+    padding: 0.75rem 1rem;
+    background: var(--surface);
+    color: var(--text);
+    border: 2px solid var(--border);
+    border-radius: 0.25rem;
+}
+
+.search-results ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.search-results li {
+    padding: 0.25rem 0;
+}
+
+.link-button {
+    margin-top: 0.25rem;
+    padding: 0.5rem 0;
+    min-height: 2.75rem;
+    background: none;
+    border: 0;
+    color: var(--link);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+    cursor: pointer;
+}
+
+/* ---------- Main navigation ---------- */
+.site-nav ul,
+.site-footer ul,
+.news-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-nav {
+    grid-area: nav;
+    background: var(--violet-900);
+    padding: 0.5rem;
+}
+
+.site-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.site-nav a {
+    display: block;
+    min-height: 2.75rem;                 /* 44px target (WCAG 2.5.8 minimum is 24px) */
+    padding: 0.625rem 1rem;
+    color: var(--white);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0.25rem;
+}
+
+.site-nav a:hover {
+    background: var(--aqua-200);
+    color: var(--ink);
+    text-decoration: underline;
+}
+
+/* ---------- Main content ---------- */
+main {
+    grid-area: main;
+    padding: 1.5rem;
+    min-width: 0;
+}
+
+main > section {
+    max-width: 46rem;
+    margin: 0 auto 3rem;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    color: var(--heading);
+    font-weight: 800;
+}
+
+h1 {
+    font-size: clamp(1.875rem, 1.5rem + 1.5vw, 2.5rem);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 1.3rem + 0.8vw, 1.875rem);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 3px solid var(--aqua-300);
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+main p,
+main li {
+    max-width: 70ch;
+}
+
+main p + p {
+    margin-top: 1rem;
+}
+
+#home img {
+    margin: 0 0 1rem;
+    border-radius: 0.5rem;
+}
+
+blockquote {
+    margin: 0;
+    padding: 1rem 1.25rem;
+    background: var(--surface);
+    border-left: 6px solid var(--accent);
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+strong {
+    font-weight: 700;
+}
+
+/* ---------- Tables ---------- */
+.table-wrap {
+    margin-bottom: 1.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+thead th:first-child {
+    width: 7.5rem;
+}
+
+caption {
+    text-align: left;
+    font-weight: 800;
+    font-size: 1.125rem;
+    color: var(--heading);
+    padding-bottom: 0.5rem;
+}
+
+th,
+td {
+    padding: 0.625rem 0.75rem;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid var(--border);
+}
+
+thead th {
+    background: var(--surface);
+}
+
+tbody th {
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* ---------- Forms ---------- */
+.apply-form {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.field {
+    display: grid;
+    gap: 0.375rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+}
+
+.field label,
+.field legend {
+    font-weight: 700;
+}
+
+.field legend {
+    padding: 0;
+    margin-bottom: 0.375rem;
+}
+
+.required,
+.optional {
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.hint {
+    color: var(--text-muted);
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field select,
+.field textarea {
+    width: 100%;
+    max-width: 30rem;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--input-bg);
+    color: var(--text);
+    border: 2px solid var(--border);
+    border-radius: 0.25rem;
+}
+
+@media (prefers-contrast: more) {
+    .field input[type="text"],
+    .field input[type="email"],
+    .field select,
+    .field textarea {
+        border-width: 3px;
+    }
+}
+
+.field textarea {
+    max-width: 40rem;
+    resize: vertical;
+}
+
+.choice {
     display: flex;
     align-items: center;
-    gap: 1em;
+    gap: 0.75rem;
 }
 
-/* Input field */
-div.search input {
-    background-color: aqua;
-    padding: 0.1em;
+.choice label {
+    font-weight: 400;
+    padding: 0.5rem 0;                   /* whole label is a big click target */
+    cursor: pointer;
 }
 
-/* Go button */
-div.search button {
-    background: aqua;
-    font-size: 1em;
+.choice input {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0;
+    flex-shrink: 0;
+    accent-color: var(--accent);
+    cursor: pointer;
 }
 
-/* Content */
-.content {
-    grid-column: 2;
-    grid-row: 2;
+/* Errors: colour + icon + text + thicker border. Never colour alone. */
+.field-error {
     display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    color: var(--error);
+    font-weight: 700;
+}
+
+.field-error::before {
+    content: "!" / "";                   /* decorative; the text says "Error:" */
+    display: inline-grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 1.375rem;
+    height: 1.375rem;
+    margin-top: 0.05rem;
+    border-radius: 50%;
+    background: var(--error);
+    color: var(--on-error);
+    font-size: 0.875rem;
+    font-weight: 800;
+}
+
+.field.has-error {
+    padding-left: 1rem;
+    border-left: 5px solid var(--error);
+}
+
+[aria-invalid="true"] {
+    border-color: var(--error) !important;
+    border-width: 3px !important;
+}
+
+.error-summary {
+    margin: 1rem 0;
+    padding: 1rem 1.25rem;
+    border: 4px solid var(--error);
+    border-radius: 0.25rem;
+    background: var(--error-bg);
+}
+
+.error-summary h3 {
+    color: var(--error);
+}
+
+.error-summary ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.error-summary a {
+    color: var(--error);
+    font-weight: 700;
+}
+
+.button-primary {
+    justify-self: start;
+    min-height: 2.75rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    font-weight: 700;
+    border: 2px solid var(--btn-border);
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.button-primary:hover {
+    background: var(--btn-hover-bg);
+    color: var(--btn-hover-text);
+}
+
+/* Success message appears right after the submit button */
+.form-status:not(:empty) {
+    margin-top: 1rem;
+    padding: 1rem 1.25rem;
+    background: var(--success-bg);
+    color: var(--success);
+    border-left: 6px solid var(--success);
+    font-weight: 700;
+}
+
+.form-status:not(:empty)::before {
+    content: "\2713  " / "";            /* check mark, decorative */
+}
+
+/* ---------- Sidebar news ---------- */
+.side-news {
+    grid-area: aside;
+    padding: 1.5rem;
+    background: var(--aside-bg);
+    color: var(--aside-text);
+}
+
+.side-news h2 {
+    font-size: 1.375rem;
+}
+
+.side-news a {
+    color: var(--aside-link);
+}
+
+.news-item {
+    display: grid;
+    gap: 0.5rem;
+    max-width: 22rem;
+}
+
+.news-item img {
+    border-radius: 0.375rem;
+}
+
+.news-item h3 {
+    font-size: 1.125rem;
+    margin: 0;
+}
+
+.news-item p {
+    color: var(--aside-muted);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    grid-area: footer;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    background-color: black;
-    color: darkblue;
-    text-align: center;
-    padding-bottom: 1em;
-}
-
-/*Main content header in center*/
-.content h4 {
-    text-align: center;
-    font-size: 2em;
-    padding-bottom: 1em;
-}
-
-/*Content text*/
-.content p {
-    padding-top: 1em;
-}
-
-.content table {
-    color: whitesmoke;
-    padding: 1em;
+    gap: 0.5rem 2rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--violet-900);
+    color: var(--white);
     text-align: center;
 }
 
-.content table td
-{
-    padding: 1em;
+.site-footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 1.5rem;
 }
 
-/* Right sidebar */
-.right-bar {
-    text-align: center;
-    padding: 1em;
-    grid-column: 3;
-    grid-row: 2;
-    background-color: aqua;
+.site-footer a {
+    display: inline-block;
+    padding: 0.5rem 0;
+    color: var(--violet-100);
 }
 
-.right-bar p {
-    padding-bottom: 0.5em;
-    font-size: 1.1em;
+/* ---------- Wider screens: original three-column layout ---------- */
+@media (min-width: 64em) {
+    body {
+        grid-template-columns: 14rem minmax(0, 1fr) 17rem;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "header header header"
+            "nav    main   aside"
+            "footer footer footer";
+    }
+
+    .site-nav {
+        padding: 1rem 0.75rem;
+    }
+
+    .site-nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    main {
+        padding: 2rem;
+    }
 }
 
-.right-bar ul li {
-    padding-bottom: 1em;
+/* Nav only sticks on screens tall enough that it can never cover anything
+   (WCAG 2.4.11). On short or zoomed viewports it scrolls normally. */
+@media (min-width: 64em) and (min-height: 32em) {
+    .site-nav ul {
+        position: sticky;
+        top: 1rem;
+    }
 }
 
-/* Footer */
-.foot {
-    grid-column: 1 / 4;
-    grid-row: 3;
-    text-align: center;
-    background-color: blueviolet;
-    color: white;
-    padding: 1em;
+/* ---------- Accessibility statement page ---------- */
+.page-statement {
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
 }
 
-/*Footer text*/
-.foot span {
-    padding: 1em;
-    color: purple;
+@media (min-width: 64em) {
+    .page-statement {
+        grid-template-columns: 14rem minmax(0, 1fr);
+        grid-template-areas:
+            "header header"
+            "nav    main"
+            "footer footer";
+    }
+}
+
+.page-statement main ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin: 0.5rem 0 1rem;
+}
+
+.page-statement main li + li {
+    margin-top: 0.25rem;
+}
+
+.page-statement h2 {
+    margin-top: 2rem;
+}
+
+/* ---------- Windows contrast themes / forced colours ---------- */
+@media (forced-colors: active) {
+    :focus-visible {
+        outline-color: Highlight;
+    }
+
+    .skip-link,
+    .search button,
+    .button-primary,
+    .site-nav a,
+    .search-results,
+    .error-summary,
+    .form-status:not(:empty) {
+        border: 2px solid CanvasText;
+    }
+
+    .field-error::before {
+        border: 1px solid CanvasText;
+    }
 }
