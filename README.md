@@ -42,15 +42,6 @@ npm run audit                        # raw axe + IBM results and vision screensh
 - **Form:** focused error summary listing all 5 problems; `aria-invalid` and `aria-describedby` (hints kept); summary links focus fields; specific email errors that clear live; success announced
 - **Low vision:** 24px minimum targets, 200% text, WCAG 1.4.12 text spacing at 1280px and 320px, reduced motion, forced colours
 
-## Still needs a human (do before demoing)
-
-Automated tools catch only part of the real issues. These still need a person:
-
-- [ ] **Keyboard only:** put the mouse away and do search and the apply form with Tab, Shift+Tab, Enter, Space and arrow keys
-- [ ] **Screen reader:** VoiceOver (Mac, Cmd+F5) or NVDA (Windows, free). List headings and landmarks, submit the form with mistakes, check the search count is read
-- [ ] **Magnifier at 4x** while filling in the form
-- [ ] **Alt text review** by someone who knows the photos
-- [ ] **Windows contrast theme** on a real Windows machine
 
 ## Files
 
