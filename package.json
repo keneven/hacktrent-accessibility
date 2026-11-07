@@ -1,0 +1,19 @@
+{
+  "name": "hacktrent-accessible-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "HackTrent Accessible Website Challenge: WCAG 2.2 AA fix pass of the starter site",
+  "scripts": {
+    "test": "node tests/a11y.test.mjs",
+    "validate": "html-validate index.html accessibility.html",
+    "audit": "node tests/audit.mjs . a11y-audit/after",
+    "check": "npm run validate && npm test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "accessibility-checker-engine": "^4.0.0",
+    "html-validate": "^11.0.0",
+    "playwright": "^1.51.0"
+  }
+}
