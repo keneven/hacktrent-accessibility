@@ -1,75 +1,231 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accessbility Challenge</title>
-    <link rel="stylesheet" href="/reset.css" />
-    <link rel="stylesheet" href="/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HackTrent at Trent University</title>
+    <meta name="description" content="HackTrent is the student hackathon at Trent University. Read about the event, apply, and see the schedule.">
+    <meta name="color-scheme" content="light dark">
+    <link rel="icon" href="data:,">
+    <link rel="preload" href="assets/fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
+    <header class="site-header">
+        <!-- First focusable element: lets keyboard and screen reader users jump past the header and nav -->
+        <a class="skip-link" href="#main">Skip to main content</a>
 
-    <!-- Top header + Search bar-->
-    <section>
-        <div>
-            <h2>HackTrent</h2>
-            <h3><i>@ Trent University</i></h3>
+        <div class="brand">
+            <p class="brand-name"><a href="#home">HackTrent</a></p>
+            <p class="brand-tagline">at Trent University</p>
         </div>
-        <div class="search"><b>Search:</b><input type="url" placeholder="Search..."><button> Go</button></div>
-    </section>
 
+        <!-- Native <search> landmark (no ARIA needed) -->
+        <search class="search">
+            <form id="search-form" action="#" novalidate>
+                <label for="search-input">Search this site</label>
+                <div class="search-row">
+                    <input type="search" id="search-input" name="q" autocomplete="off" spellcheck="false">
+                    <button type="submit">Search</button>
+                </div>
+                <p class="field-error" id="search-error" hidden></p>
+                <!-- Live region is always in the page so screen readers announce the result count -->
+                <p class="search-status" id="search-status" role="status"></p>
+                <!-- Results appear right under the search box, where magnifier users are looking -->
+                <div class="search-results" id="search-results" hidden>
+                    <ul id="search-list"></ul>
+                    <button type="button" class="link-button" id="search-clear">Clear search results</button>
+                </div>
+            </form>
+        </search>
+    </header>
 
-    <section>
-        <div onclick="location.href='#home'">Home</div>
-        <div onclick="location.href='#about'">About Us</div>
-        <div onclick="location.href='#apply'">Apply Now</div>
-        <div onclick="location.href='#schedule'">Event Schedule</div>
-        <div onclick="location.href='#contact'">Contact</div>
-    </section>
+    <nav class="site-nav" aria-label="Main">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#apply">Apply Now</a></li>
+            <li><a href="#schedule">Event Schedule</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <section class="content">
-        <div>
-            <h4>Main content</h4>
-            <img src="/assets/happy-hackers.jpg" width="500px">
-            <p>lorem ipsum dolor sit amet consectetur adipiscing elit proident sunt placeat est quos incididunt amet
+    <main id="main" tabindex="-1">
+        <section id="home">
+            <h1>Welcome to HackTrent</h1>
+            <img src="assets/happy-hackers.jpg" width="1200" height="800"
+                alt="Students working together at long wooden tables with laptops open during a hackathon, one group talking over a shared project.">
+            <!-- Placeholder text is pseudo-Latin, so it is marked lang="la" (WCAG 3.1.2) -->
+            <p lang="la">lorem ipsum dolor sit amet consectetur adipiscing elit proident sunt placeat est quos incididunt amet
                 blanditiis et est deserunt ut laboris qui eum cum nam fugiat placeat sunt quo consequat dolore nisi
                 ullamco et sunt deserunt veniam reprehenderit et imperdiet cillum eum possimus quas at fugiat eiusmod
                 cumque voluptas dolor</p>
+        </section>
 
-            <br>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum."
+        <section id="about">
+            <h2>About Us</h2>
+            <blockquote lang="la">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.</p>
+            </blockquote>
+        </section>
 
-                
-            </p>
+        <section id="apply">
+            <h2 id="apply-title">Apply Now</h2>
+            <!-- Error summary: filled and focused by script.js when the form has problems -->
+            <div class="error-summary" id="error-summary" tabindex="-1" hidden>
+                <h3 id="error-summary-title">There is a problem</h3>
+                <ul id="error-summary-list"></ul>
+            </div>
 
+            <form id="apply-form" class="apply-form" action="#" aria-labelledby="apply-title">
+                <div class="field">
+                    <label for="full-name">Full name <span class="required">(required)</span></label>
+                    <p class="field-error" id="full-name-error" hidden></p>
+                    <input type="text" id="full-name" name="fullName" autocomplete="name" required>
+                </div>
 
-    <section class="right-bar">
-        <p> this is the right content</p>
-        <ul>
+                <div class="field">
+                    <label for="email">Email address <span class="required">(required)</span></label>
+                    <p class="hint" id="email-hint">We will send your confirmation here. Example: name@trentu.ca</p>
+                    <p class="field-error" id="email-error" hidden></p>
+                    <input type="email" id="email" name="email" autocomplete="email" inputmode="email"
+                        aria-describedby="email-hint" required>
+                </div>
 
-            <li>
-                <div class="news"><img
-                        src="/assets/hacktrent-2025.jpg"
-                        width="100px">
-                    <div><a href="#image">HackTrent2025 Recap</a>
-                        <p>November 15, 2025</p>
+                <div class="field">
+                    <label for="program">Program of study <span class="optional">(optional)</span></label>
+                    <input type="text" id="program" name="program" autocomplete="off">
+                </div>
+
+                <div class="field">
+                    <label for="year">Year of study <span class="required">(required)</span></label>
+                    <p class="field-error" id="year-error" hidden></p>
+                    <select id="year" name="year" required>
+                        <option value="">Choose your year</option>
+                        <option>1st year</option>
+                        <option>2nd year</option>
+                        <option>3rd year</option>
+                        <option>4th year</option>
+                        <option>Graduate student</option>
+                        <option>Not a student</option>
+                    </select>
+                </div>
+
+                <fieldset class="field" id="experience-group">
+                    <legend>How many hackathons have you been to? <span class="required">(required)</span></legend>
+                    <p class="field-error" id="experience-error" hidden></p>
+                    <div class="choice">
+                        <input type="radio" id="exp-none" name="experience" value="none" required>
+                        <label for="exp-none">This is my first one</label>
+                    </div>
+                    <div class="choice">
+                        <input type="radio" id="exp-some" name="experience" value="1-3">
+                        <label for="exp-some">1 to 3</label>
+                    </div>
+                    <div class="choice">
+                        <input type="radio" id="exp-many" name="experience" value="4+">
+                        <label for="exp-many">4 or more</label>
+                    </div>
+                </fieldset>
+
+                <div class="field">
+                    <label for="access-needs">Accessibility or dietary needs <span class="optional">(optional)</span></label>
+                    <p class="hint" id="access-needs-hint">Tell us anything that helps us plan, such as seating, captioning, or food allergies.</p>
+                    <textarea id="access-needs" name="accessNeeds" rows="4" aria-describedby="access-needs-hint"></textarea>
+                </div>
+
+                <div class="field">
+                    <p class="field-error" id="conduct-error" hidden></p>
+                    <div class="choice">
+                        <input type="checkbox" id="conduct" name="conduct" required>
+                        <label for="conduct">I agree to follow the HackTrent code of conduct <span class="required">(required)</span></label>
                     </div>
                 </div>
+
+                <button type="submit" class="button-primary">Submit application</button>
+            </form>
+
+            <p class="form-status" id="apply-status" role="status"></p>
+        </section>
+
+        <section id="schedule">
+            <h2>Event Schedule</h2>
+            <div class="table-wrap">
+                <table>
+                    <caption>Saturday, November 7</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Event</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row"><time datetime="2026-11-07T09:00">9:00 AM</time></th><td>Check-in and breakfast</td></tr>
+                        <tr><th scope="row"><time datetime="2026-11-07T10:00">10:00 AM</time></th><td>Opening ceremony</td></tr>
+                        <tr><th scope="row"><time datetime="2026-11-07T11:00">11:00 AM</time></th><td>Hacking begins</td></tr>
+                        <tr><th scope="row"><time datetime="2026-11-07T13:00">1:00 PM</time></th><td>Accessible Website Design Workshop</td></tr>
+                        <tr><th scope="row"><time datetime="2026-11-07T18:00">6:00 PM</time></th><td>Dinner</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <caption>Sunday, November 8</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Event</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row"><time datetime="2026-11-08T09:00">9:00 AM</time></th><td>Breakfast</td></tr>
+                        <tr><th scope="row"><time datetime="2026-11-08T11:00">11:00 AM</time></th><td>Hacking ends and projects are due</td></tr>
+                        <tr><th scope="row"><time datetime="2026-11-08T12:00">12:00 PM</time></th><td>Judging</td></tr>
+                        <tr><th scope="row"><time datetime="2026-11-08T14:00">2:00 PM</time></th><td>Closing ceremony and awards</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Questions during the event? Find an organizer at the check-in desk.</p>
+        </section>
+    </main>
+
+    <aside class="side-news" aria-labelledby="news-title">
+        <h2 id="news-title">Latest News</h2>
+        <ul class="news-list">
+            <li>
+                <article class="news-item">
+                    <img src="assets/hacktrent-2025.jpg" width="600" height="450"
+                        alt="Lecture hall decorated with balloons, with a projector slide reading Welcome to HackTrent, November 8-9 2025.">
+                    <h3><a href="#image">HackTrent 2025 Recap</a></h3>
+                    <p><time datetime="2025-11-15">November 15, 2025</time></p>
+                </article>
             </li>
         </ul>
-    </section>
+    </aside>
 
-    <section class="foot">
-        <span>© 2026 HackTrent. All rights reserved.</span>
-        <span><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Use</a> | <a
-                href="#accessibility">Accessibility</a></span>
-    </section>
+    <footer class="site-footer">
+        <p>&copy; 2026 HackTrent. All rights reserved.</p>
+        <nav aria-label="Footer">
+            <ul>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms of Use</a></li>
+                <li><a href="accessibility.html">Accessibility</a></li>
+            </ul>
+        </nav>
+    </footer>
 </body>
-
 
 </html>
