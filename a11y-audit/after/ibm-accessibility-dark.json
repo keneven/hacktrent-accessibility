@@ -1,0 +1,114 @@
+[
+  {
+    "rule": "style_highcontrast_visible",
+    "level": "VIOLATION",
+    "result": "MANUAL",
+    "message": "Confirm Windows high contrast mode is supported when using CSS to include, position or alter non-decorative content",
+    "path": "/html[1]/head[1]/link[3]"
+  },
+  {
+    "rule": "style_color_misuse",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Verify color is not used as the only visual means of conveying information",
+    "path": "/html[1]/head[1]/link[4]"
+  },
+  {
+    "rule": "style_viewport_resizable",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Verify that text sized using viewport units can be resized up to 200%",
+    "path": "/html[1]/head[1]/link[4]"
+  },
+  {
+    "rule": "element_tabbable_visible",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Confirm the element should be tabbable and if so, it becomes visible when it has keyboard focus",
+    "path": "/html[1]/body[1]/header[1]/a[1]"
+  },
+  {
+    "rule": "style_focus_visible",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
+    "path": "/html[1]/body[1]/header[1]/div[1]/p[1]/a[1]"
+  },
+  {
+    "rule": "text_block_heading",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Confirm this text 'at Trent University' is used as a heading and if so, modify to use a heading element or role",
+    "path": "/html[1]/body[1]/header[1]/div[1]/p[2]"
+  },
+  {
+    "rule": "style_focus_visible",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
+    "path": "/html[1]/body[1]/nav[1]/ul[1]/li[1]/a[1]"
+  },
+  {
+    "rule": "style_focus_visible",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
+    "path": "/html[1]/body[1]/nav[1]/ul[1]/li[2]/a[1]"
+  },
+  {
+    "rule": "style_focus_visible",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
+    "path": "/html[1]/body[1]/nav[1]/ul[1]/li[3]/a[1]"
+  },
+  {
+    "rule": "style_focus_visible",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
+    "path": "/html[1]/body[1]/nav[1]/ul[1]/li[4]/a[1]"
+  },
+  {
+    "rule": "style_focus_visible",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
+    "path": "/html[1]/body[1]/nav[1]/ul[1]/li[5]/a[1]"
+  },
+  {
+    "rule": "style_focus_visible",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
+    "path": "/html[1]/body[1]/main[1]/section[1]/p[4]/a[1]"
+  },
+  {
+    "rule": "style_focus_visible",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
+    "path": "/html[1]/body[1]/footer[1]/nav[1]/ul[1]/li[1]/a[1]"
+  },
+  {
+    "rule": "style_focus_visible",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
+    "path": "/html[1]/body[1]/footer[1]/nav[1]/ul[1]/li[2]/a[1]"
+  },
+  {
+    "rule": "style_focus_visible",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
+    "path": "/html[1]/body[1]/footer[1]/nav[1]/ul[1]/li[3]/a[1]"
+  },
+  {
+    "rule": "style_focus_visible",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
+    "path": "/html[1]/body[1]/footer[1]/nav[1]/ul[1]/li[4]/a[1]"
+  }
+]
