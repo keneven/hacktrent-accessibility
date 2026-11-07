@@ -1,0 +1,26 @@
+[
+  {
+    "page": "/",
+    "theme": "light",
+    "axeRules": 2,
+    "axeElements": 18,
+    "axeIds": [
+      "color-contrast",
+      "image-alt"
+    ],
+    "ibmViolations": 29,
+    "ibmNeedsReview": 16
+  },
+  {
+    "page": "/",
+    "theme": "dark",
+    "axeRules": 2,
+    "axeElements": 18,
+    "axeIds": [
+      "color-contrast",
+      "image-alt"
+    ],
+    "ibmViolations": 29,
+    "ibmNeedsReview": 16
+  }
+]

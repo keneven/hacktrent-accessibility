@@ -1,0 +1,359 @@
+[
+  {
+    "rule": "html_skipnav_exists",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Verify there is a way to bypass blocks of content that are repeated on multiple Web pages",
+    "path": "/html[1]"
+  },
+  {
+    "rule": "style_highcontrast_visible",
+    "level": "VIOLATION",
+    "result": "MANUAL",
+    "message": "Confirm Windows high contrast mode is supported when using CSS to include, position or alter non-decorative content",
+    "path": "/html[1]/head[1]/link[1]"
+  },
+  {
+    "rule": "style_color_misuse",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Verify color is not used as the only visual means of conveying information",
+    "path": "/html[1]/head[1]/link[2]"
+  },
+  {
+    "rule": "skip_main_exists",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "The page does not provide a way to quickly navigate to the main content (ARIA \"main\" landmark or a skip link)",
+    "path": "/html[1]/body[1]"
+  },
+  {
+    "rule": "aria_content_in_landmark",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Content is not within a landmark element",
+    "path": "/html[1]/body[1]/section[1]/div[1]/h2[1]"
+  },
+  {
+    "rule": "text_contrast_sufficient",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Text contrast of 1.58 with its background is less than the WCAG AA minimum requirements for text of size 32px and weight of 400",
+    "path": "/html[1]/body[1]/section[1]/div[1]/h2[1]"
+  },
+  {
+    "rule": "text_contrast_sufficient",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Text contrast of 1.58 with its background is less than the WCAG AA minimum requirements for text of size 33.6px and weight of 400",
+    "path": "/html[1]/body[1]/section[1]/div[1]/h3[1]/i[1]"
+  },
+  {
+    "rule": "text_contrast_sufficient",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Text contrast of 3.52 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400",
+    "path": "/html[1]/body[1]/section[1]/div[2]/b[1]"
+  },
+  {
+    "rule": "aria_content_in_landmark",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Content is not within a landmark element",
+    "path": "/html[1]/body[1]/section[1]/div[2]/input[1]"
+  },
+  {
+    "rule": "input_label_visible",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "The ‘placeholder’ is the only visible label",
+    "path": "/html[1]/body[1]/section[1]/div[2]/input[1]"
+  },
+  {
+    "rule": "aria_eventhandler_role_valid",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "The <div> element with 'onclick' does not have a valid ARIA role specified",
+    "path": "/html[1]/body[1]/section[2]/div[1]"
+  },
+  {
+    "rule": "element_mouseevent_keyboard",
+    "level": "RECOMMENDATION",
+    "result": "MANUAL",
+    "message": "Confirm the <div> element with mouse event handler(s) 'onclick' has a corresponding keyboard handler(s)",
+    "path": "/html[1]/body[1]/section[2]/div[1]"
+  },
+  {
+    "rule": "script_onclick_misuse",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Possible use of a script to emulate a link",
+    "path": "/html[1]/body[1]/section[2]/div[1]"
+  },
+  {
+    "rule": "text_contrast_sufficient",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Text contrast of 1.10 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400",
+    "path": "/html[1]/body[1]/section[2]/div[1]"
+  },
+  {
+    "rule": "aria_eventhandler_role_valid",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "The <div> element with 'onclick' does not have a valid ARIA role specified",
+    "path": "/html[1]/body[1]/section[2]/div[2]"
+  },
+  {
+    "rule": "element_mouseevent_keyboard",
+    "level": "RECOMMENDATION",
+    "result": "MANUAL",
+    "message": "Confirm the <div> element with mouse event handler(s) 'onclick' has a corresponding keyboard handler(s)",
+    "path": "/html[1]/body[1]/section[2]/div[2]"
+  },
+  {
+    "rule": "script_onclick_misuse",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Possible use of a script to emulate a link",
+    "path": "/html[1]/body[1]/section[2]/div[2]"
+  },
+  {
+    "rule": "text_contrast_sufficient",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Text contrast of 1.10 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400",
+    "path": "/html[1]/body[1]/section[2]/div[2]"
+  },
+  {
+    "rule": "aria_eventhandler_role_valid",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "The <div> element with 'onclick' does not have a valid ARIA role specified",
+    "path": "/html[1]/body[1]/section[2]/div[3]"
+  },
+  {
+    "rule": "element_mouseevent_keyboard",
+    "level": "RECOMMENDATION",
+    "result": "MANUAL",
+    "message": "Confirm the <div> element with mouse event handler(s) 'onclick' has a corresponding keyboard handler(s)",
+    "path": "/html[1]/body[1]/section[2]/div[3]"
+  },
+  {
+    "rule": "script_onclick_misuse",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Possible use of a script to emulate a link",
+    "path": "/html[1]/body[1]/section[2]/div[3]"
+  },
+  {
+    "rule": "text_contrast_sufficient",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Text contrast of 1.10 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400",
+    "path": "/html[1]/body[1]/section[2]/div[3]"
+  },
+  {
+    "rule": "aria_eventhandler_role_valid",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "The <div> element with 'onclick' does not have a valid ARIA role specified",
+    "path": "/html[1]/body[1]/section[2]/div[4]"
+  },
+  {
+    "rule": "element_mouseevent_keyboard",
+    "level": "RECOMMENDATION",
+    "result": "MANUAL",
+    "message": "Confirm the <div> element with mouse event handler(s) 'onclick' has a corresponding keyboard handler(s)",
+    "path": "/html[1]/body[1]/section[2]/div[4]"
+  },
+  {
+    "rule": "script_onclick_misuse",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Possible use of a script to emulate a link",
+    "path": "/html[1]/body[1]/section[2]/div[4]"
+  },
+  {
+    "rule": "text_contrast_sufficient",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Text contrast of 1.10 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400",
+    "path": "/html[1]/body[1]/section[2]/div[4]"
+  },
+  {
+    "rule": "aria_eventhandler_role_valid",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "The <div> element with 'onclick' does not have a valid ARIA role specified",
+    "path": "/html[1]/body[1]/section[2]/div[5]"
+  },
+  {
+    "rule": "element_mouseevent_keyboard",
+    "level": "RECOMMENDATION",
+    "result": "MANUAL",
+    "message": "Confirm the <div> element with mouse event handler(s) 'onclick' has a corresponding keyboard handler(s)",
+    "path": "/html[1]/body[1]/section[2]/div[5]"
+  },
+  {
+    "rule": "script_onclick_misuse",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Possible use of a script to emulate a link",
+    "path": "/html[1]/body[1]/section[2]/div[5]"
+  },
+  {
+    "rule": "text_contrast_sufficient",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Text contrast of 1.10 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400",
+    "path": "/html[1]/body[1]/section[2]/div[5]"
+  },
+  {
+    "rule": "aria_content_in_landmark",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Content is not within a landmark element",
+    "path": "/html[1]/body[1]/section[3]/div[1]/h4[1]"
+  },
+  {
+    "rule": "text_contrast_sufficient",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Text contrast of 1.37 with its background is less than the WCAG AA minimum requirements for text of size 32px and weight of 400",
+    "path": "/html[1]/body[1]/section[3]/div[1]/h4[1]"
+  },
+  {
+    "rule": "img_alt_valid",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "The image has neither an accessible name nor is marked as decorative or redundant",
+    "path": "/html[1]/body[1]/section[3]/div[1]/img[1]"
+  },
+  {
+    "rule": "text_contrast_sufficient",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Text contrast of 1.37 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400",
+    "path": "/html[1]/body[1]/section[3]/div[1]/p[1]"
+  },
+  {
+    "rule": "text_contrast_sufficient",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Text contrast of 1.37 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400",
+    "path": "/html[1]/body[1]/section[3]/div[1]/p[2]"
+  },
+  {
+    "rule": "text_quoted_correctly",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "If the following text is a quotation, mark it as a <q> or <blockquote> element: \"Lorem ipsum dolor sit amet, con ... unt mollit anim id est laborum.\"",
+    "path": "/html[1]/body[1]/section[3]/div[1]/p[2]"
+  },
+  {
+    "rule": "text_block_heading",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Confirm this text 'this is the right content' is used as a heading and if so, modify to use a heading element or role",
+    "path": "/html[1]/body[1]/section[3]/div[1]/section[1]/p[1]"
+  },
+  {
+    "rule": "aria_content_in_landmark",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Content is not within a landmark element",
+    "path": "/html[1]/body[1]/section[3]/div[1]/section[1]/p[1]"
+  },
+  {
+    "rule": "text_sensory_misuse",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Confirm the word(s) 'right' of the user instruction is used to indicate a logical rather than visual position",
+    "path": "/html[1]/body[1]/section[3]/div[1]/section[1]/p[1]"
+  },
+  {
+    "rule": "img_alt_valid",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "The image has neither an accessible name nor is marked as decorative or redundant",
+    "path": "/html[1]/body[1]/section[3]/div[1]/section[1]/ul[1]/li[1]/div[1]/img[1]"
+  },
+  {
+    "rule": "aria_content_in_landmark",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Content is not within a landmark element",
+    "path": "/html[1]/body[1]/section[3]/div[1]/section[1]/ul[1]/li[1]/div[1]/div[1]/a[1]"
+  },
+  {
+    "rule": "style_focus_visible",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
+    "path": "/html[1]/body[1]/section[3]/div[1]/section[1]/ul[1]/li[1]/div[1]/div[1]/a[1]"
+  },
+  {
+    "rule": "text_block_heading",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Confirm this text 'November 15, 2025' is used as a heading and if so, modify to use a heading element or role",
+    "path": "/html[1]/body[1]/section[3]/div[1]/section[1]/ul[1]/li[1]/div[1]/div[1]/p[1]"
+  },
+  {
+    "rule": "text_contrast_sufficient",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Text contrast of 1.58 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400",
+    "path": "/html[1]/body[1]/section[3]/div[1]/section[2]/span[1]"
+  },
+  {
+    "rule": "aria_content_in_landmark",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Content is not within a landmark element",
+    "path": "/html[1]/body[1]/section[3]/div[1]/section[2]/span[2]/a[1]"
+  },
+  {
+    "rule": "style_focus_visible",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
+    "path": "/html[1]/body[1]/section[3]/div[1]/section[2]/span[2]/a[1]"
+  },
+  {
+    "rule": "text_contrast_sufficient",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Text contrast of 1.58 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400",
+    "path": "/html[1]/body[1]/section[3]/div[1]/section[2]/span[2]/a[1]"
+  },
+  {
+    "rule": "style_focus_visible",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
+    "path": "/html[1]/body[1]/section[3]/div[1]/section[2]/span[2]/a[2]"
+  },
+  {
+    "rule": "text_contrast_sufficient",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Text contrast of 1.58 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400",
+    "path": "/html[1]/body[1]/section[3]/div[1]/section[2]/span[2]/a[2]"
+  },
+  {
+    "rule": "style_focus_visible",
+    "level": "VIOLATION",
+    "result": "POTENTIAL",
+    "message": "Check the keyboard focus indicator is visible when using CSS declaration for 'border' or 'outline'",
+    "path": "/html[1]/body[1]/section[3]/div[1]/section[2]/span[2]/a[3]"
+  },
+  {
+    "rule": "text_contrast_sufficient",
+    "level": "VIOLATION",
+    "result": "FAIL",
+    "message": "Text contrast of 1.58 with its background is less than the WCAG AA minimum requirements for text of size 16px and weight of 400",
+    "path": "/html[1]/body[1]/section[3]/div[1]/section[2]/span[2]/a[3]"
+  }
+]

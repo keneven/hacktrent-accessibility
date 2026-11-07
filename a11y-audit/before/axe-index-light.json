@@ -1,0 +1,689 @@
+[
+  {
+    "id": "color-contrast",
+    "impact": "serious",
+    "tags": [
+      "cat.color",
+      "wcag2aa",
+      "wcag143",
+      "TTv5",
+      "TT13.c",
+      "EN-301-549",
+      "EN-9.1.4.3",
+      "ACT",
+      "RGAAv4",
+      "RGAA-3.2.1"
+    ],
+    "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    "help": "Elements must meet minimum color contrast ratio thresholds",
+    "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+    "nodes": [
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#800080",
+              "bgColor": "#8a2be2",
+              "contrastRatio": 1.58,
+              "fontSize": "24.0pt (32px)",
+              "fontWeight": "normal",
+              "messageKey": null,
+              "expectedContrastRatio": "3:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<h2>HackTrent</h2>",
+                "target": [
+                  "h2"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 1.58 (foreground color: #800080, background color: #8a2be2, font size: 24.0pt (32px), font weight: normal). Expected contrast ratio of 3:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<h2>HackTrent</h2>",
+        "target": [
+          "h2"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.58 (foreground color: #800080, background color: #8a2be2, font size: 24.0pt (32px), font weight: normal). Expected contrast ratio of 3:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#800080",
+              "bgColor": "#8a2be2",
+              "contrastRatio": 1.58,
+              "fontSize": "25.2pt (33.6px)",
+              "fontWeight": "normal",
+              "messageKey": null,
+              "expectedContrastRatio": "3:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<h3><i>@ Trent University</i></h3>",
+                "target": [
+                  "h3"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 1.58 (foreground color: #800080, background color: #8a2be2, font size: 25.2pt (33.6px), font weight: normal). Expected contrast ratio of 3:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<i>@ Trent University</i>",
+        "target": [
+          "i"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.58 (foreground color: #800080, background color: #8a2be2, font size: 25.2pt (33.6px), font weight: normal). Expected contrast ratio of 3:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#000000",
+              "bgColor": "#8a2be2",
+              "contrastRatio": 3.52,
+              "fontSize": "12.0pt (16px)",
+              "fontWeight": "normal",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<section>\n        <div>\n            <h2>HackTrent</h2>\n            <h3><i>@ Trent University</i></h3>\n        </div>\n        <div class=\"search\"><b>Search:</b><input type=\"url\" placeholder=\"Search...\"><button> Go</button></div>\n    </section>",
+                "target": [
+                  "section:nth-child(1)"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 3.52 (foreground color: #000000, background color: #8a2be2, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<b>Search:</b>",
+        "target": [
+          "b"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.52 (foreground color: #000000, background color: #8a2be2, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0000ff",
+              "bgColor": "#800080",
+              "contrastRatio": 1.09,
+              "fontSize": "12.0pt (16px)",
+              "fontWeight": "normal",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<section>",
+                "target": [
+                  "section:nth-child(2)"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 1.09 (foreground color: #0000ff, background color: #800080, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<div onclick=\"location.href='#home'\">Home</div>",
+        "target": [
+          "div[onclick=\"location.href='#home'\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.09 (foreground color: #0000ff, background color: #800080, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0000ff",
+              "bgColor": "#800080",
+              "contrastRatio": 1.09,
+              "fontSize": "12.0pt (16px)",
+              "fontWeight": "normal",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<section>",
+                "target": [
+                  "section:nth-child(2)"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 1.09 (foreground color: #0000ff, background color: #800080, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<div onclick=\"location.href='#about'\">About Us</div>",
+        "target": [
+          "div[onclick=\"location.href='#about'\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.09 (foreground color: #0000ff, background color: #800080, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0000ff",
+              "bgColor": "#800080",
+              "contrastRatio": 1.09,
+              "fontSize": "12.0pt (16px)",
+              "fontWeight": "normal",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<section>",
+                "target": [
+                  "section:nth-child(2)"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 1.09 (foreground color: #0000ff, background color: #800080, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<div onclick=\"location.href='#apply'\">Apply Now</div>",
+        "target": [
+          "div[onclick=\"location.href='#apply'\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.09 (foreground color: #0000ff, background color: #800080, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0000ff",
+              "bgColor": "#800080",
+              "contrastRatio": 1.09,
+              "fontSize": "12.0pt (16px)",
+              "fontWeight": "normal",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<section>",
+                "target": [
+                  "section:nth-child(2)"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 1.09 (foreground color: #0000ff, background color: #800080, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<div onclick=\"location.href='#schedule'\">Event Schedule</div>",
+        "target": [
+          "div[onclick=\"location.href='#schedule'\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.09 (foreground color: #0000ff, background color: #800080, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0000ff",
+              "bgColor": "#800080",
+              "contrastRatio": 1.09,
+              "fontSize": "12.0pt (16px)",
+              "fontWeight": "normal",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<section>",
+                "target": [
+                  "section:nth-child(2)"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 1.09 (foreground color: #0000ff, background color: #800080, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<div onclick=\"location.href='#contact'\">Contact</div>",
+        "target": [
+          "div[onclick=\"location.href='#contact'\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.09 (foreground color: #0000ff, background color: #800080, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#00008b",
+              "bgColor": "#000000",
+              "contrastRatio": 1.37,
+              "fontSize": "24.0pt (32px)",
+              "fontWeight": "normal",
+              "messageKey": null,
+              "expectedContrastRatio": "3:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<section class=\"content\">",
+                "target": [
+                  ".content"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 1.37 (foreground color: #00008b, background color: #000000, font size: 24.0pt (32px), font weight: normal). Expected contrast ratio of 3:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<h4>Main content</h4>",
+        "target": [
+          "h4"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.37 (foreground color: #00008b, background color: #000000, font size: 24.0pt (32px), font weight: normal). Expected contrast ratio of 3:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#00008b",
+              "bgColor": "#000000",
+              "contrastRatio": 1.37,
+              "fontSize": "12.0pt (16px)",
+              "fontWeight": "normal",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<section class=\"content\">",
+                "target": [
+                  ".content"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 1.37 (foreground color: #00008b, background color: #000000, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<p>",
+        "target": [
+          "p:nth-child(3)"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.37 (foreground color: #00008b, background color: #000000, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#00008b",
+              "bgColor": "#000000",
+              "contrastRatio": 1.37,
+              "fontSize": "12.0pt (16px)",
+              "fontWeight": "normal",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<section class=\"content\">",
+                "target": [
+                  ".content"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 1.37 (foreground color: #00008b, background color: #000000, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<p>",
+        "target": [
+          "p:nth-child(5)"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.37 (foreground color: #00008b, background color: #000000, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#800080",
+              "bgColor": "#8a2be2",
+              "contrastRatio": 1.58,
+              "fontSize": "12.0pt (16px)",
+              "fontWeight": "normal",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<section class=\"foot\">\n        <span>© 2026 HackTrent. All rights reserved.</span>\n        <span><a href=\"#privacy\">Privacy Policy</a> | <a href=\"#terms\">Terms of Use</a> | <a href=\"#accessibility\">Accessibility</a></span>\n    </section>",
+                "target": [
+                  ".foot"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 1.58 (foreground color: #800080, background color: #8a2be2, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<span>© 2026 HackTrent. All rights reserved.</span>",
+        "target": [
+          "span:nth-child(1)"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.58 (foreground color: #800080, background color: #8a2be2, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#800080",
+              "bgColor": "#8a2be2",
+              "contrastRatio": 1.58,
+              "fontSize": "12.0pt (16px)",
+              "fontWeight": "normal",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<section class=\"foot\">\n        <span>© 2026 HackTrent. All rights reserved.</span>\n        <span><a href=\"#privacy\">Privacy Policy</a> | <a href=\"#terms\">Terms of Use</a> | <a href=\"#accessibility\">Accessibility</a></span>\n    </section>",
+                "target": [
+                  ".foot"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 1.58 (foreground color: #800080, background color: #8a2be2, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<span><a href=\"#privacy\">Privacy Policy</a> | <a href=\"#terms\">Terms of Use</a> | <a href=\"#accessibility\">Accessibility</a></span>",
+        "target": [
+          "span:nth-child(2)"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.58 (foreground color: #800080, background color: #8a2be2, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0000ee",
+              "bgColor": "#8a2be2",
+              "contrastRatio": 1.57,
+              "fontSize": "12.0pt (16px)",
+              "fontWeight": "normal",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<section class=\"foot\">\n        <span>© 2026 HackTrent. All rights reserved.</span>\n        <span><a href=\"#privacy\">Privacy Policy</a> | <a href=\"#terms\">Terms of Use</a> | <a href=\"#accessibility\">Accessibility</a></span>\n    </section>",
+                "target": [
+                  ".foot"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 1.57 (foreground color: #0000ee, background color: #8a2be2, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<a href=\"#privacy\">Privacy Policy</a>",
+        "target": [
+          "a[href$=\"#privacy\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.57 (foreground color: #0000ee, background color: #8a2be2, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0000ee",
+              "bgColor": "#8a2be2",
+              "contrastRatio": 1.57,
+              "fontSize": "12.0pt (16px)",
+              "fontWeight": "normal",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<section class=\"foot\">\n        <span>© 2026 HackTrent. All rights reserved.</span>\n        <span><a href=\"#privacy\">Privacy Policy</a> | <a href=\"#terms\">Terms of Use</a> | <a href=\"#accessibility\">Accessibility</a></span>\n    </section>",
+                "target": [
+                  ".foot"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 1.57 (foreground color: #0000ee, background color: #8a2be2, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<a href=\"#terms\">Terms of Use</a>",
+        "target": [
+          "a[href$=\"#terms\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.57 (foreground color: #0000ee, background color: #8a2be2, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+      },
+      {
+        "any": [
+          {
+            "id": "color-contrast",
+            "data": {
+              "fgColor": "#0000ee",
+              "bgColor": "#8a2be2",
+              "contrastRatio": 1.57,
+              "fontSize": "12.0pt (16px)",
+              "fontWeight": "normal",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            },
+            "relatedNodes": [
+              {
+                "html": "<section class=\"foot\">\n        <span>© 2026 HackTrent. All rights reserved.</span>\n        <span><a href=\"#privacy\">Privacy Policy</a> | <a href=\"#terms\">Terms of Use</a> | <a href=\"#accessibility\">Accessibility</a></span>\n    </section>",
+                "target": [
+                  ".foot"
+                ]
+              }
+            ],
+            "impact": "serious",
+            "message": "Element has insufficient color contrast of 1.57 (foreground color: #0000ee, background color: #8a2be2, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "serious",
+        "html": "<a href=\"#accessibility\">Accessibility</a>",
+        "target": [
+          "a[href$=\"#accessibility\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.57 (foreground color: #0000ee, background color: #8a2be2, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+      }
+    ]
+  },
+  {
+    "id": "image-alt",
+    "impact": "critical",
+    "tags": [
+      "cat.text-alternatives",
+      "wcag2a",
+      "wcag111",
+      "section508",
+      "section508.22.a",
+      "TTv5",
+      "TT7.a",
+      "TT7.b",
+      "EN-301-549",
+      "EN-9.1.1.1",
+      "ACT",
+      "RGAAv4",
+      "RGAA-1.1.1"
+    ],
+    "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+    "help": "Images must have alternative text",
+    "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/image-alt?application=playwright",
+    "nodes": [
+      {
+        "any": [
+          {
+            "id": "has-alt",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an alt attribute"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<img src=\"/assets/happyHackers.JPG\" width=\"500px\">",
+        "target": [
+          "img[src$=\"happyHackers.JPG\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      },
+      {
+        "any": [
+          {
+            "id": "has-alt",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element does not have an alt attribute"
+          },
+          {
+            "id": "aria-label",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-label attribute does not exist or is empty"
+          },
+          {
+            "id": "aria-labelledby",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+          },
+          {
+            "id": "non-empty-title",
+            "data": {
+              "messageKey": "noAttr"
+            },
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element has no title attribute"
+          },
+          {
+            "id": "presentational-role",
+            "data": null,
+            "relatedNodes": [],
+            "impact": "critical",
+            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+          }
+        ],
+        "all": [],
+        "none": [],
+        "impact": "critical",
+        "html": "<img src=\"/assets/HackTrent2025.jpg\" width=\"100px\">",
+        "target": [
+          "img[src$=\"HackTrent2025.jpg\"]"
+        ],
+        "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+      }
+    ]
+  }
+]
